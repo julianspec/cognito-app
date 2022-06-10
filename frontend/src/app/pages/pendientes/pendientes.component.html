@@ -1,0 +1,148 @@
+
+<div class="card">
+
+  <div class="card-header bg-light">
+    <h4>Bandeja de Pendientes</h4>
+  </div>
+
+
+    <br>
+  
+
+ <div class="container-fluid">
+   <div class="row">
+
+    <div class="form-row">
+
+      <div class="form-group col-md-4">
+        <select id="inputState" class="form-control">
+          <option selected>Desplegar</option>
+          <option>Opcion 1</option>
+          <option>Opcion 2</option>
+          <option>Opcion 3</option>
+        </select>
+      </div>
+
+      <div class="form-group col-md-4">
+        <select id="inputState" class="form-control">
+          <option selected>Desplegar</option>
+          <option>Opcion 1</option>
+          <option>Opcion 2</option>
+          <option>Opcion 3</option>
+        </select>
+
+        <br>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
+          <label class="form-check-label" for="flexCheckDefault">Ver derivaciones a otros usuarios</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+          <label class="form-check-label" for="flexCheckChecked">Ver cambios de domicilio </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+          <label class="form-check-label" for="flexCheckDefault">Ver derivaciones pendientes a entes externos</label>
+        </div>
+      </div>
+
+  
+      <div class="form-group col-md-4">
+        <select id="inputState" class="form-control">
+          <option selected>Desplegar</option>
+          <option>Opcion 1</option>
+          <option>Opcion 2</option>
+          <option>Opcion 3</option>
+        </select>
+
+        <br>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+          <label class="form-check-label" for="flexCheckDefault">Ver devoluciones por promociones</label>
+        </div>
+
+        <br>
+        <button class="btn btn-primary" onclick="exportTableToExcel('grdPendientes', 'pendientes')"><i class="fa fa-table" aria-hidden="true"></i>&nbsp;Exportar a Excel</button>
+        &nbsp;
+       
+      </div>
+
+    </div>
+   </div>
+ </div>
+
+  <div class="card-body">
+    <div class="table-wrapper"> 
+   
+      <table id="grdPendientes" class="table">
+        <thead>
+          <tr>
+            <th></th>
+            <th scope="col-sm-2">Prefijo</th>
+            <th scope="col-sm-2">Id</th>
+            <th scope="col-sm-2">Nro Doc</th>
+            <th scope="col-sm-2">Apellido</th>
+            <th scope="col-sm-2">Nombre</th>
+            <th scope="col-sm-2">F.Ingreso</th>
+            <th scope="col-sm-2">Suc</th>
+            <th scope="col-sm-2">Suc.Des</th>
+            <th scope="col-sm-2">Estado</th>
+            <th scope="col-sm-2">Des</th>
+            <th scope="col-sm-2">T.Oper</th>
+            <th scope="col-sm-2">Prod</th>
+            <th scope="col-sm-2">SubProd</th>
+            <th scope="col-sm-2">Rubro</th>
+            <th scope="col-sm-2">Motivo</th>
+            <th scope="col-sm-2">Comercio</th>
+            <th scope="col-sm-2">Usr</th>
+            <th scope="col-sm-2">Deriv</th>
+            <th scope="col-sm-2">F.Alta</th>
+            <th scope="col-sm-2">F.Deriv</th>
+            <th scope="col-sm-2">Conoc.Por</th>
+            <th scope="col-sm-2">Vto</th>
+            <th scope="col-sm-2">Mod.Datos</th>
+            <th scope="col-sm-2">Inconv.</th>
+            <th scope="col-sm-2">Cod.Suc.</th>
+            <th scope="col-sm-2">Suc.Origen</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let dato of data">
+            <td>
+              <button class='btn customFolder'><i class='fas fa-folder'></i></button>
+            </td>
+            <td>{{dato.prefijo}}</td>
+            <td>{{dato.id}}</td>
+            <td>{{dato.nro_doc}}</td>
+            <td>{{dato.apellido}}</td>
+            <td>{{dato.nombre}}</td>
+            <td>{{dato.fecha_ingreso}}</td>
+            <td>{{dato.sucursal}}</td>
+            <td>{{dato.sucursal_desc}}</td>
+            <td>{{dato.estado}}</td>
+            <td>{{dato.estado_desc}}</td>
+            <td>{{dato.tipo_operacion}}</td>
+            <td>{{dato.producto}}</td>
+            <td>{{dato.subproducto}}</td>
+            <td>{{dato.rubro}}</td>
+            <td>{{dato.motivo}}</td>
+            <td>{{dato.comercio}}</td>
+            <td>{{dato.usuario}}</td>
+            <td>{{dato.usuario_deriv}}</td>
+            <td>{{dato.fec_alta_hora}}</td>
+            <td>{{dato.fec_deriv_hora}}</td>
+            <td>{{dato.conocimiento_por}}</td>
+            <td>{{dato.tarj_fec_vto_cierre}}</td>
+            <td>{{dato.modif_datos}}</td>
+            <td>{{dato.inconveniente}}</td>
+            <td>{{dato.cod_suc_origen}}</td>
+            <td>{{dato.sucursal_origen}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+
+

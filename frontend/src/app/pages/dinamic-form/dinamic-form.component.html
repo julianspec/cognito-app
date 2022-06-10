@@ -1,0 +1,21 @@
+<div class="card">
+<div class="card-header bg-light"><h4>{{titulo}}</h4></div><br>
+<div class="container-fluid">
+<div class="row">
+
+<form id="my-form">
+    <div class="form-row" [innerHTML]="sanitizer.bypassSecurityTrustHtml(datasource)"></div>
+</form>
+
+<div class="row" >
+    <div class="col">
+        <button (click)="goBack();" class="btn btn-primary float-start"><i class="fa fa-arrow-left" aria-hidden="true"></i>&nbsp;Volver</button> 
+        <button *ngIf=delBtn  (click)="delete();" class="btn btn-danger  float-end"><i class="fa fa-trash" aria-hidden="true"></i>&nbsp;Borrar</button>  
+        <button type="button" *ngIf=saveBtn (click)="save();" class="btn btn-primary float-end"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;Guardar</button>
+    </div>
+</div>
+
+<br><br><br>
+</div>
+</div>
+</div>

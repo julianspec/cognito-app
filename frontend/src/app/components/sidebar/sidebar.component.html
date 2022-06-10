@@ -1,0 +1,140 @@
+<div class="main-sidebar sidebar-style-2">
+    <aside id="sidebar-wrapper">
+      <div class="sidebar-brand">
+        <img style="width: 50%; height: 50%" src="assets/img/logo/logo-ct.png">
+      </div>
+      <div class="sidebar-brand sidebar-brand-sm">
+        <img style="width: 50%; height: 50%" src="assets/img/avatar/avatar-1.png">
+      </div>
+
+      <ul class="sidebar-menu">
+
+        <li class="dropdown">
+          <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fa fa-inbox"></i><span>Reclamos</span> </a>
+           <ul class="dropdown-menu" >
+
+            <li  *ngFor="let data of reclamos">
+              <div *ngIf="data.ac_migrado==='N' || !data.ac_migrado">
+                <a class="nav-link" [routerLink]="['/main/iframe', data.ac_menu_link]">{{data.ac_menu}}</a>
+              </div>
+              <div *ngIf="data.ac_migrado==='S'">
+                <a class="nav-link" routerLink="bandeja">{{data.ac_menu}}</a>
+              </div>    
+            </li>
+            
+          </ul> 
+        </li>
+
+        <li class="dropdown">
+          <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fa fa-archive"></i><span>Administracion</span> </a>
+           <ul class="dropdown-menu" >
+
+            
+            <li  *ngFor="let data of administracion">
+              <div *ngIf="data.ac_migrado==='N' || !data.ac_migrado">
+                <a class="nav-link" [routerLink]="['/main/iframe', data.ac_menu_link]">{{data.ac_menu}}</a>
+              </div>
+              <div *ngIf="data.ac_migrado==='S'">
+                <a class="nav-link" routerLink="bandeja">{{data.ac_menu}}</a>
+              </div>    
+            </li>
+
+            <!--
+            <li  *ngFor="let data of administracion">
+              <div>
+                <a class="nav-link" [routerLink]="['/main/dinamicpage', data.ac_menu]">{{data.ac_menu}}</a>
+              </div>    
+            </li>   
+            -->
+
+          </ul> 
+        </li>
+
+        <li class="dropdown">
+          <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fa fa-university"></i><span>BCRA</span> </a>
+           <ul class="dropdown-menu" >
+            <li  *ngFor="let data of bcra">
+              <div *ngIf="data.ac_migrado==='N' || !data.ac_migrado">
+                <a class="nav-link" [routerLink]="['/main/iframe', data.ac_menu_link]">{{data.ac_menu}}</a>
+              </div>
+              <div *ngIf="data.ac_migrado==='S'">
+                <a class="nav-link" [routerLink]="['/main/dinamicpage', data.ac_menu]">{{data.ac_menu}}</a>
+              </div>    
+            </li>
+          </ul> 
+        </li>
+
+        <li class="dropdown">
+          <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fa fa-envelope"></i><span>Configura Mail</span> </a>
+           <ul class="dropdown-menu" >     
+            <li  *ngFor="let data of configura_mail">
+              <div *ngIf="data.ac_migrado==='N' || !data.ac_migrado">
+                <a class="nav-link" [routerLink]="['/main/iframe', data.ac_menu_link]">{{data.ac_menu}}</a>
+              </div>
+              <div *ngIf="data.ac_migrado==='S'">
+                <a class="nav-link" [routerLink]="['/main/dinamicpage', data.ac_menu]">{{data.ac_menu}}</a>
+              </div>    
+            </li>
+          </ul> 
+        </li>
+
+        <li class="dropdown">
+          <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fa fa-cog"></i><span>Configuracion</span> </a>
+           <ul class="dropdown-menu" >
+            <li  *ngFor="let data of configuracion">
+              <div *ngIf="data.ac_migrado==='N' || !data.ac_migrado">
+                <a class="nav-link" [routerLink]="['/main/iframe', data.ac_menu_link]">{{data.ac_menu}}</a>
+              </div>
+              <div *ngIf="data.ac_migrado==='S'">
+                <a class="nav-link" [routerLink]="['/main/dinamicpage', data.ac_menu]">{{data.ac_menu}}</a> 
+              </div>    
+            </li>
+          </ul> 
+        </li>
+
+        <li class="dropdown">
+          <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-address-card"></i><span>Encuestas</span> </a>
+           <ul class="dropdown-menu" >
+            <li  *ngFor="let data of encuesta">
+              <div *ngIf="data.ac_migrado==='N' || !data.ac_migrado">
+                <a class="nav-link" [routerLink]="['/main/iframe', data.ac_menu_link]">{{data.ac_menu}}</a>
+              </div>
+              <div *ngIf="data.ac_migrado==='S'">
+                <a class="nav-link" [routerLink]="['/main/dinamicpage', data.ac_menu]">{{data.ac_menu}}</a>
+              </div>    
+            </li>
+          </ul> 
+        </li>
+
+        <li class="dropdown">
+          <a class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-file"></i><span>Reportes</span> </a>
+           <ul class="dropdown-menu" >
+            <li  *ngFor="let data of reportes">
+              <div *ngIf="data.ac_migrado==='N' || !data.ac_migrado">
+                <a class="nav-link" [routerLink]="['/main/iframe', data.ac_menu_link]">{{data.ac_menu}}</a>
+              </div>
+              <div *ngIf="data.ac_migrado==='S'">
+                <a class="nav-link" [routerLink]="['/main/dinamicpage', data.ac_menu]">{{data.ac_menu}}</a> 
+              </div>    
+            </li>
+          </ul> 
+        </li>
+
+        <li class="dropdown">
+          <a class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-lock"></i><span>Seguridad</span> </a>
+           <ul class="dropdown-menu" >
+            <li  *ngFor="let data of seguridad">
+              <div *ngIf="data.ac_migrado==='N' || !data.ac_migrado">
+                <a class="nav-link" [routerLink]="['/main/iframe', data.ac_menu_link]">{{data.ac_menu}}</a>
+              </div>
+              <div *ngIf="data.ac_migrado==='S'">
+                  <a class="nav-link" [routerLink]="['/main/dinamicpage', data.ac_menu]">{{data.ac_menu}}</a>
+              </div>    
+            </li>
+          </ul> 
+        </li>
+
+      </ul>
+      
+    </aside>
+  </div>

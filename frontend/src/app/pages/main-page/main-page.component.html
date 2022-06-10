@@ -1,0 +1,17 @@
+<!--
+<div *ngIf="login==0">
+    <router-outlet name="login"></router-outlet>
+    <app-login (login)="getLogin($event)"></app-login> 
+</div>
+-->
+
+<div class="main-wrapper main-wrapper-1">
+<!-- Navbar -->
+<app-navbar></app-navbar>
+<!-- Sidebar -->
+<app-sidebar></app-sidebar>
+<!-- Main Content -->
+<div class="main-content">
+<router-outlet></router-outlet>
+</div>
+</div>
